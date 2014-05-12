@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{{charset}}}" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <title>Mobile web - portfolio</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="keywords" content="free mobile website templates, iphone ,android, high end touch" />
+        <meta name="description" content="Design 6 is a free mobile template work in all most all mobile devices. you are free to use for both commercial and non-commercial purpose by attributing to http://mobifreaks.com" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(".nav-button").click(function () {
+                $(".nav-button,.primary-nav").toggleClass("open");
+                });    
+            });
+            jQuery(document).ready(function($){
+                $(window).scroll(function(){
+                if ($(this).scrollTop()) {
+                    $('.backToTop').fadeIn('slow');
+                } else {
+                    $('.backToTop').fadeOut('slow');
+                }
+                    });
+                    $('.backToTop').click(function(){
+                $("html, body").animate({ scrollTop: 0 }, 500);
+                //$("html, body").scrollTop(0); //Bez animacie
+                return false;
+                });
+            });
+        </script>
+    </head>
+<body>
+    <header>
+
+<!-- LOGO -->
+        {{#logo}}
+        {{#written}}
+                <a href="{{name}}">
+        {{/written}}
+        <div class="logo">
+                {{#image}}
+                    {{#href_sign}}
+                    <a href="{{href}}">
+                    {{/href_sign}}
+                        <img src="{{src}}" class="lg"/>
+                    {{#href_sign}}
+                    </a>
+                    {{/href_sign}}
+                {{/image}}
+                {{#written}}
+                <h1 id="logo_name" >{{src}}</h1>
+                {{/written}}
+        </div>
+        {{#written}}
+                </a>
+        {{/written}}
+        {{/logo}}
+
+<!-- NAVIGATION -->
+
+            <button class="nav-button" tabindex="1">Toggle Navigation</button>
+{{#footer}}
+            {{#has_phone}}
+            <a href="tel:{{{telephone}}}"><button class="tel-button" tabindex="1">Toggle Navigation</button></a>
+            {{/has_phone}}
+            {{#has_email}}
+            <a href="mailTo:{{{email}}}"><button class="email-button" tabindex="1">Toggle Navigation</button></a>
+            {{/has_email}}
+{{/footer}}
+            <ul class="primary-nav">
+            {{#navigation}}
+            <li {{#has_levels}}class="parent"{{/has_levels}}><a {{#is_link}}href="{{url}}"{{/is_link}}>{{text}}</a>
+                {{#has_levels}}
+                <ul>
+                    {{#level}}
+                    <li><a href="{{l_url}}">{{l_text}}</a></li>
+                    {{/level}}
+                </ul>
+                {{/has_levels}}
+            </li>
+            {{/navigation}}
+        </ul>
+        <div class="clear"></div>
+    </header> 
+
+<!-- CONTENT -->
+    <div class="content">
+		{{{content}}}
+    </div>
+	<br />
+    <br />
+<!-- FOOTER -->
+    <div> {{#footer}}{{{page}}}{{/footer}} </div>
+    <div><a href="#" id="toTop" class="backToTop"><img src="./images/back-to-top.png" id="back-to-top"/></a></div>
+</body>
+</html>

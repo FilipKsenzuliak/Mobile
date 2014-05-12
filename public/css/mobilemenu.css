@@ -1,0 +1,41 @@
+body{
+    margin-top: 10px;
+}
+#content { 
+    background-color: white;
+    min-height:710px; /* for modern browsers */
+    max-width:410px;
+    height:710px; /* for IE5.x and IE6 */
+    height:auto !important;
+    background-image: url('../images/mobile.png');
+}
+#content iframe{
+    margin: 0 0 0 9px;
+    padding-top: 32px;
+    width:360px;
+    max-width:360px;
+    border:none;
+    min-height:672px; /* for modern browsers */
+    height:auto !important;
+    /*height:640px;  for IE5.x and IE6 */
+    display: block;
+}
+
+.original{
+    float: left;
+    margin: 10px 0 0 10px;
+    padding-left: 30px;
+    padding-right: 25px;
+}
+
+.transformed{
+    display: block;
+    margin: 60px 0 0 10px;
+}
+
+.download{
+    display: block;
+    margin: 150px 0 0 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
